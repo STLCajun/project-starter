@@ -1,0 +1,30 @@
+<!doctype html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	{{>scripts/header}}
+
+	<title>{{title}}</title>
+</head>
+<body>
+
+	{{>flash}}
+	{{>page-header}}
+
+	<main>
+		{{{ body }}}
+	</main>
+
+	{{>page-footer}}
+
+
+{{>scripts/footer}}
+
+</body>
+</html>

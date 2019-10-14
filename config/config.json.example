@@ -1,0 +1,26 @@
+{
+  "test": {
+    "PORT": 3000,
+    "MONGODB_URI": "mongodb://ip:port/collection",
+    "SITE_URL": "localhost",
+    "SECRET": "thisissupersecretkeepitquiet",
+    "EMAIL_ADDRESS": "",
+    "SMTP_SERVER": "",
+    "SMTP_PORT": 587,
+    "SMTP_PASS": "",
+    "SMTP_USER": "",
+    "ROLLBAR_TOKEN": ""
+  },
+  "development": {
+    "PORT": 3000,
+    "MONGODB_URI": "mongodb://ip:port/collection",
+    "SITE_URL": "localhost",
+    "SECRET": "thisissupersecretkeepitquiet",
+    "EMAIL_ADDRESS": "",
+    "SMTP_SERVER": "",
+    "SMTP_PORT": 587,
+    "SMTP_PASS": "",
+    "SMTP_USER": "",
+    "ROLLBAR_TOKEN": ""
+  }
+}
