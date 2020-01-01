@@ -1,18 +1,18 @@
-require('./config/config');
-const Rollbar = require("rollbar");
+require('./config/config')
+const Rollbar = require("rollbar")
 const express = require('express')
-const exphbs = require('express-handlebars')
+const nunjucks = require('nunjucks')
 const _ = require('lodash')
 const {mongoose} = require('./db/mongoose')
 const path = require('path')
 const jwt = require('jsonwebtoken')
 const moment = require('moment')
-const passport = require('passport');
-const flash    = require('connect-flash');
-const morgan   = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const session    = require('express-session');
+const passport = require('passport')
+const flash    = require('connect-flash')
+const morgan   = require('morgan')
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+const session    = require('express-session')
 
 const rollbar = new Rollbar({
 	accessToken: process.env.ROLLBAR_TOKEN,
@@ -33,20 +33,13 @@ app.use(session({
 
 app.use(require('connect-livereload')());
 app.use(express.static( path.join(__dirname, '/public')))
-app.engine('hbs',  exphbs({
-	defaultLayout: 'main',
-	extname: '.hbs',
-	helpers: {
-		formatDate: function (date, format) {
-			return moment(date).format(format);
-		},
-		relativeDate: function (date) {
-			return moment(date).fromNow();
-		}
-	}
-}));
 
-app.set('view engine', 'hbs');
+nunjucks.configure('views', {
+    autoescape: true,
+    express: app
+});
+
+app.set('view engine', 'html');
 
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
