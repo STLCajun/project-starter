@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
@@ -81,7 +81,11 @@ let config = {
 			proxy: 'http://localhost:3000',
 			port: 80,
 		}),
-	]
+	],
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+    },
 }
 
 // if (mode === 'production') {
