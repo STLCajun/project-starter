@@ -21,7 +21,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "bootstrap": "^4.3.1",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "browser-sync-webpack-plugin": "^2.2.2",
     "connect-flash": "^0.1.1",
     "connect-livereload": "^0.6.0",
